@@ -33,11 +33,12 @@ class DB_Helper:
         return data[0]
 
     # Add the RFID and temperature
-    def addEntry(self, id, temp):
+    def addEntry(self, id, temp, humidity):
         print "Inserting the data..."
-        query = "INSERT INTO tbl_Data (TagId, Temperature) VALUES (%s, %s)" % (id, temp)
+        query = "INSERT INTO tbl_Data (TagId, Temperature, Humidity) VALUES (%s, %s, %s)" % (id, temp, humidity)
         self.cursor.execute(query)
         self.dbcon.commit()
+        return True
 
     # Add the TagId
     def registerRFID(self, id, resp, suburb, state):
