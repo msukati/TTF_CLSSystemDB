@@ -10,9 +10,11 @@ def setup():
 	GPIO.setup(LEDPin, GPIO.OUT)
 	GPIO.output(LEDPin, GPIO.HIGH)
 
-def led():
+def ledON():
 	GPIO.output(LEDPin, GPIO.LOW)
-	time.sleep(1)
+	time.sleep(0.5)
+	
+def ledOFF():
 	GPIO.output(LEDPin, GPIO.HIGH)
 	time.sleep(0.5)
 
